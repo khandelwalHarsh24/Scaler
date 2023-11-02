@@ -1,0 +1,41 @@
+/* Navigation bar styles */
+.navbar {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 10px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar .navbar-brand {
+    font-size: 24px;
+  }
+  
+  .navbar .navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar a {
+      margin: 5px 0;
+    }
+  }
+  

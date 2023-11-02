@@ -1,0 +1,73 @@
+<div class="filter-options">
+  <label
+    >Show Students with Marks Assigned:
+    <input
+      type="checkbox"
+      [(ngModel)]="showStudentsWithMarks"
+      [disabled]="showStudentsWithoutMarks"
+      (change)="onFilterMarks($event)"
+    />
+  </label>
+  <label
+    >Show Students without Marks Assigned:
+    <input
+      type="checkbox"
+      [(ngModel)]="showStudentsWithoutMarks"
+      [disabled]="showStudentsWithMarks"
+      (change)="onFilterMarksNotAssign($event)"
+    />
+  </label>
+</div>
+<div class="card-container">
+  <div class="card" *ngFor="let data of studentdata; let i = index">
+    <div class="card-header">Student Data</div>
+    <div class="card-body">
+      <h5 class="card-text">Project: {{ data.name }}</h5>
+      <p class="card-title">Name: {{ data.project_name }}</p>
+      <p class="card-text">Marks Assigned:</p>
+      <ul>
+        <li>Ideation: {{ data.project_eval.ideation }}</li>
+        <li>Execution: {{ data.project_eval.execution }}</li>
+        <li>Viva: {{ data.project_eval.viva }}</li>
+      </ul>
+    </div>
+    <button
+      class="assign-button"
+      [ngClass]="{
+        'assign-button': !isDisabled,
+        'assign-button-disabled': isDisabled
+      }"
+      [disabled]="isDisabled"
+      (click)="assignMarks(i)"
+    >
+      {{ "Edit" }}
+    </button>
+
+    <button
+      [ngClass]="{
+        'assign-button': !isDisabled,
+        'assign-button-disabled': isDisabled
+      }"
+      [disabled]="isDisabled"
+      (click)="removeData(i)"
+    >
+      {{ "Unassign" }}
+    </button>
+  </div>
+</div>
+
+<div *ngIf="!isEmpty">
+  <button
+    [ngClass]="{
+      'assign-button': !isDisabled,
+      'assign-button-disabled': isDisabled
+    }"
+    [disabled]="isDisabled"
+    (click)="submitdata()"
+  >
+    {{ "Submit" }}
+  </button>
+</div>
+<div *ngIf="isEmpty">
+  <h1>No Student Assigned</h1>
+</div>

@@ -1,0 +1,66 @@
+/* Card styles */
+.card-container {
+  display: flex; /* Arrange child elements horizontally */
+  flex-wrap: wrap; /* Wrap to the next row if the container width is limited */
+}
+
+
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 350px;
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 1.2rem;
+  }
+
+  .assign-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .assign-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  
+  .disabled-card {
+    background-color: #ccc;
+  }
+
+.assign-button {
+  background-color: lightblue;
+  color: black;
+  cursor: pointer;
+}
+
+  
+  

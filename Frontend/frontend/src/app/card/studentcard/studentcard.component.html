@@ -1,0 +1,52 @@
+
+
+<!-- <div class="card-container">
+    <div
+      class="card"
+      *ngFor="let data of studentdata; let i = index"
+      [ngClass]="{ 'assigned-card': assignedStudents.has(i) }"
+    >
+      <div
+        class="card-header"
+        [ngClass]="{ 'disabled-card': isDisabled }"
+        [ngStyle]="{'background-color': isMentorAssigned(data) ? 'grey' : 'lightblue'}"
+      >
+        Student Card
+      </div>
+      <div class="card-body">
+        <h5 class="card-text">Project: {{ data.name }}</h5>
+        <p class="card-title">Name: {{ data.project_name }}</p>
+      </div>
+      <button
+        [disabled]="isDisabled || isMentorAssigned(data) || assignedStudents.has(i)"
+        [ngStyle]="{ 'background-color': isMentorAssigned(data) ? 'grey' : 'lightblue' }"
+        class="assign-button"
+        (click)="toggleButtonState(i)"
+      >
+       Assign
+      </button>
+    </div>
+  </div>
+   -->
+
+
+   <div class="card-container">
+    <div class="card" *ngFor="let data of studentdata; let i = index" >
+      <div class="card-header" 
+        [ngStyle]="{'background-color': 'blue'}">
+        Student Card
+      </div>
+      <div class="card-body">
+        <h5 class="card-text">Project: {{ data.name }}</h5>
+        <p class="card-title">Name: {{ data.project_name }}</p>
+      </div>
+      <button
+        [ngClass]="{'assign-button': !isDisabled}"
+        [disabled]="isDisabled"
+        (click)="toggleButtonState(i)" >
+        {{ "Assign"}}
+      </button>
+    </div>
+  </div>
+  
+  
